@@ -46,9 +46,9 @@ if (process.env.NODE_ENV === 'production') {
   app.get('/service-worker.js', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'service-worker.js'));
   });
-  app.use('/', express.static('src/client', { redirect: false }));
+  app.use('/', express.static('client', { redirect: false }));
   app.get('*', function (req, res, next) {
-    res.sendFile(path.resolve('src/client/index.html'));
+    res.sendFile(path.resolve('client/index.html'));
   });
 }
 
