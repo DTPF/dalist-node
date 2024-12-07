@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const server = require("./app");
+const mongoose = require('mongoose');
+const server = require('./app');
 const config = require('./config/config');
 
 try {
