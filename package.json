@@ -5,6 +5,7 @@
   "author": "David T. Pizarro Frick",
   "main": "src/index.js",
   "scripts": {
+    "db": "docker start dalist-mongodb",
     "start": "NODE_ENV=production node src/index.js",
     "dev": "NODE_ENV=development nodemon src/index.js",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,scss,json,md}\""

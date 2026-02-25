@@ -12,6 +12,7 @@ Dalist backend is a wishlist management REST API built with Express.js (Node.js)
 ## Commands
 
 ```bash
+pnpm db               # Start MongoDB Docker container (dalist-mongodb, required)
 pnpm install          # Install dependencies
 pnpm dev              # Development server with nodemon (port 4000, NODE_ENV=development)
 pnpm start            # Production server (port 4004, NODE_ENV=production)
