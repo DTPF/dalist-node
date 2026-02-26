@@ -11,6 +11,9 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,scss,json,md}\""
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
