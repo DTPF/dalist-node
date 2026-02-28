@@ -58,7 +58,7 @@ async function getWishlistById(req, res) {
       const user = await User.findByIdAndUpdate(
         { _id: userId },
         { wishlistsInfo: { currentWishlist: wishlistId } },
-        { returnOriginal: false }
+        { new: true }
       )
         .sort({ position: 'asc' })
         .lean()
@@ -100,7 +100,7 @@ async function postNewWishlistItem(req, res) {
             wishlistItems: newObj,
           },
         },
-        { returnOriginal: false }
+        { new: true }
       )
         .lean()
         .exec();
@@ -134,7 +134,7 @@ async function removeWishlistItem(req, res) {
     const wishlistStored = await Wishlist.findByIdAndUpdate(
       { _id: wishlistId },
       { $pull: { wishlistItems: { id: wishlistItemId } } },
-      { returnOriginal: false }
+      { new: true }
     )
       .lean()
       .exec();
@@ -170,7 +170,7 @@ async function updateWishlist(req, res) {
   const wishlist = req.body;
   try {
     const wishlistUpdated = await Wishlist.findByIdAndUpdate({ _id: wishlistId }, wishlist, {
-      returnOriginal: false,
+      new: true,
     })
       .lean()
       .exec();
@@ -205,7 +205,7 @@ async function updateWishlistItem(req, res) {
       const wishlistStored = await Wishlist.findByIdAndUpdate(
         { _id: wishlistId },
         { wishlistItems: wishlist.wishlistItems },
-        { returnOriginal: false }
+        { new: true }
       );
 
       return res.status(200).send({

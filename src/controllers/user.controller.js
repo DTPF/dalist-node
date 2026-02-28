@@ -42,7 +42,7 @@ async function updateUser(req, res) {
 
   try {
     const userStored = await User.findOneAndUpdate({ _id: userId.toString() }, data, {
-      returnOriginal: false,
+      new: true,
     })
       .lean()
       .exec();

@@ -17,7 +17,7 @@ const CONFIG = {
     },
     db: {
       URL: `http://${process.env.IP_SERVER}:${process.env.PORT_SERVER}/api/${process.env.API_VERSION}`,
-      MONGO_URL: `mongodb://${process.env.IP_SERVER}:${process.env.PORT_MONGO_DB}/${process.env.DB_NAME}`,
+      MONGO_URL: `mongodb://${process.env.IP_MONGO_DB}:${process.env.PORT_MONGO_DB}/${process.env.DB_NAME}`,
     },
     auth0: {
       audience: process.env.AUTH0_AUDIENCE,
@@ -32,8 +32,7 @@ const CONFIG = {
     },
     db: {
       URL: `http://${process.env.IP_SERVER}${process.env.PORT_SERVER}/api/${process.env.API_VERSION}`,
-      // MONGO_URL: `mongodb://${process.env.DB_USER_PASSWORD}@${process.env.IP_SERVER}:${process.env.PORT_MONGO_DB}/${process.env.DB_NAME}?authSource=admin`,
-      MONGO_URL: `mongodb://${process.env.IP_SERVER}:${process.env.PORT_MONGO_DB}/${process.env.DB_NAME}`,
+      MONGO_URL: `mongodb://${process.env.IP_MONGO_DB}:${process.env.PORT_MONGO_DB}/${process.env.DB_NAME}`,
     },
     auth0: {
       audience: process.env.AUTH0_AUDIENCE,
